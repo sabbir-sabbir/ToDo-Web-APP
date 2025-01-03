@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocalStorage } from 'usehooks-ts';
 import './App.css';
 
 interface Task {
@@ -7,7 +8,7 @@ interface Task {
 }
 
 function App() {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] =  useLocalStorage<Task[]>('tasks', []);
   const [taskInput, setTaskInput] = useState<string>('');
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [currentTaskId, setCurrentTaskId] = useState<number | null>(null);
