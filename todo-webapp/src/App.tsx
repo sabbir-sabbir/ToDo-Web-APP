@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
+
+
 import './App.css';
 
 interface Task {
@@ -37,6 +39,8 @@ function App() {
 
   const handleDeleteTask = (id: number) => {
     setTasks(tasks.filter((task) => task.id !== id));
+
+    
   };
 
   const handleEditTask = (id: number) => {
@@ -51,13 +55,13 @@ function App() {
   return (
     <>
       <section className="w-full bg-[url('/backgroundtwo.jpg')]	  bg-cover bg-no-repeat mx-auto h-screen flex flex-col justify-center items-center ">
-        <h1 className="font-style text-5xl font-bold mb-5 text-white pr-2 border-r-2 border-pink-300">To-Do List</h1>
-        <div className="flex gap-2">
+        <h1 className="font-style text-lg md:text-3xl  lg:text-5xl font-bold mb-5 text-white pr-2 border-r-2 border-pink-300">To-Do List</h1>
+        <div className="flex gap-1">
           <input
             type="text"
             value={taskInput}
             onChange={(e) => setTaskInput(e.target.value)}
-            className="w-[700px] border-2 px-3 py-1 border-sky-300 outline-none hover:ring-1 ring-orange-300"
+            className=" w-[400px] md:w-[600px]  lg:w-[700px] border-2 px-3 py-1 ml-5 md:ml-0 border-sky-300 outline-none bg-slate-100 hover:ring-1 ring-orange-300"
             placeholder="Write your task for today..."
           />
           <button
@@ -67,7 +71,7 @@ function App() {
             {isEditing ? 'Update' : 'Add'}
           </button>
         </div>
-        <div className="w-[700px] mt-5 bg-white px-2 mr-[50px] overflow-y-auto " >
+        <div className=" w-[400px] md:w-[600px]  lg:w-[700px]  ml-12 md:ml-0 mt-5 bg-slate-200 px-2 mr-[50px] overflow-y-auto " >
           <ul>
             {tasks.map((task) => (
               <li
