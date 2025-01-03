@@ -8,6 +8,7 @@ interface Task {
 }
 
 function App() {
+  // All states are here ...
   const [tasks, setTasks] =  useLocalStorage<Task[]>('tasks', []);
   const [taskInput, setTaskInput] = useState<string>('');
   const [isEditing, setIsEditing] = useState<boolean>(false);
@@ -16,6 +17,7 @@ function App() {
   const handleAddTask = () => {
     if (taskInput.trim() === '') return; // Prevent adding empty tasks
     if (isEditing && currentTaskId !== null) {
+
       // Update the task
       setTasks((prevTasks) =>
         prevTasks.map((task) =>
@@ -25,6 +27,7 @@ function App() {
       setIsEditing(false);
       setCurrentTaskId(null);
     } else {
+
       // Add a new task
       const newTask: Task = { id: Date.now(), text: taskInput };
       setTasks([...tasks, newTask]);
@@ -47,14 +50,14 @@ function App() {
 
   return (
     <>
-      <section className="w-full mx-auto h-screen flex flex-col justify-center items-center">
-        <h1 className="font-style text-5xl font-bold mb-5">To-Do List</h1>
+      <section className="w-full bg-[url('background.jpg')]	  bg-cover bg-no-repeat mx-auto h-screen flex flex-col justify-center items-center ">
+        <h1 className="font-style text-5xl font-bold mb-5 text-white pr-2 border-r-2 border-pink-300">To-Do List</h1>
         <div className="flex gap-2">
           <input
             type="text"
             value={taskInput}
             onChange={(e) => setTaskInput(e.target.value)}
-            className="w-[500px] border-2 px-3 py-1 border-sky-300 outline-none hover:ring-1 ring-orange-300"
+            className="w-[700px] border-2 px-3 py-1 border-sky-300 outline-none hover:ring-1 ring-orange-300"
             placeholder="Write your task for today..."
           />
           <button
@@ -64,7 +67,7 @@ function App() {
             {isEditing ? 'Update' : 'Add'}
           </button>
         </div>
-        <div className="w-[550px] mt-5">
+        <div className="w-[700px] mt-5 bg-white px-2 mr-[50px] overflow-y-auto " >
           <ul>
             {tasks.map((task) => (
               <li
