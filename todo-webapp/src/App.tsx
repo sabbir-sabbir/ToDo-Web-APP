@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 interface Task {
@@ -11,6 +11,19 @@ function App() {
   const [taskInput, setTaskInput] = useState<string>('');
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [currentTaskId, setCurrentTaskId] = useState<number | null>(null);
+
+  // Load tasks from localStorage on component mount
+  useEffect(() => {
+    const storedTasks = localStorage.getItem('tasks');
+    if (storedTasks) {
+      setTasks(JSON.parse(storedTasks));
+    }
+  }, []);
+
+  // Save tasks to localStorage whenever the tasks array changes
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   const handleAddTask = () => {
     if (taskInput.trim() === '') return; // Prevent adding empty tasks
