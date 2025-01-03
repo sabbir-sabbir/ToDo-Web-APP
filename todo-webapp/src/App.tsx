@@ -22,7 +22,7 @@ function App() {
     if (taskInput.trim() === '') return; // Prevent adding empty tasks
     if (isEditing && currentTaskId !== null) {
 
-      // Update the task
+      // Task updatedd
       setTasks((prevTasks) =>
         prevTasks.map((task) =>
           task.id === currentTaskId ? { ...task, text: taskInput } : task
