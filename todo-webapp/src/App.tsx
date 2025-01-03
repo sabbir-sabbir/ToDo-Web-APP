@@ -50,7 +50,7 @@ function App() {
 
   return (
     <>
-      <section className="w-full bg-[url('background.jpg')]	  bg-cover bg-no-repeat mx-auto h-screen flex flex-col justify-center items-center ">
+      <section className="w-full bg-[url('/backgroundtwo.jpg')]	  bg-cover bg-no-repeat mx-auto h-screen flex flex-col justify-center items-center ">
         <h1 className="font-style text-5xl font-bold mb-5 text-white pr-2 border-r-2 border-pink-300">To-Do List</h1>
         <div className="flex gap-2">
           <input
