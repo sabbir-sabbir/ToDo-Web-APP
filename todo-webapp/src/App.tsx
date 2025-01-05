@@ -63,7 +63,7 @@ function App() {
             type="text"
             value={taskInput}
             onChange={(e) => setTaskInput(e.target.value)}
-            className=" w-[400px] md:w-[600px]  lg:w-[700px] border-2 px-3 py-1 ml-5 md:ml-0 border-sky-300 outline-none bg-slate-100 hover:ring-1 ring-orange-300"
+            className=" w-[400px] md:w-[600px]  lg:w-[700px] border-2 px-3 py-1 ml-5 md:ml-0 border-sky-300 outline-none bg-slate-200 hover:ring-1 ring-orange-200"
             placeholder="Write your task for today..."
           />
           <button
