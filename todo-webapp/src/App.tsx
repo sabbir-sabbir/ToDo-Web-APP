@@ -57,7 +57,11 @@ function App() {
   return (
     <>
       <section className="w-full bg-[url('/backgroundtwo.jpg')]	  bg-cover bg-no-repeat mx-auto h-screen flex flex-col justify-center items-center ">
-        <h1 className="font-style text-lg md:text-3xl  lg:text-5xl font-bold mb-5 text-white pr-2 border-r-2 border-pink-300">To-Do List</h1>
+      <div className='flex gap-8'>
+        <div> <h1 className="font-style text-lg md:text-3xl  lg:text-5xl font-bold mb-5 text-white pr-6 border-r-2 border-pink-300">To-Do List </h1></div>
+       <div><span ><img className='w-12 h-12 ' src="addtask.png" alt="task" /></span></div>
+      </div>
+       
         <div className="flex gap-1">
           <input
             type="text"
@@ -68,7 +72,7 @@ function App() {
           />
           <button
             onClick={handleAddTask}
-            className="px-4 bg-blue-500 text-white font-style font-bold leading-tight hover:bg-blue-400 hover:rounded-md"
+            className="px-4 bg-blue-500 text-white  font-bold leading-tight hover:bg-blue-400 hover:rounded-md"
           >
             {isEditing ? 'Update' : 'ADD'}
           </button>

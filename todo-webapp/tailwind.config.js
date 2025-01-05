@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-         style: ["Cormorant Upright", 'serif']
+         style: ["Playwrite AU SA", 'serif']
       },
     },
   },
