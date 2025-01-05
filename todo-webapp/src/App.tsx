@@ -70,7 +70,7 @@ function App() {
             onClick={handleAddTask}
             className="px-4 bg-blue-500 text-white font-style font-bold leading-tight hover:bg-blue-400 hover:rounded-md"
           >
-            {isEditing ? 'Update' : 'Add'}
+            {isEditing ? 'Update' : 'ADD'}
           </button>
         </div>
         <div className=" w-[400px] md:w-[600px]  lg:w-[700px]  ml-12 md:ml-0 mt-5 bg-slate-200 px-2 mr-[50px] overflow-y-auto " >
